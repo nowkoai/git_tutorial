@@ -1,0 +1,9 @@
+
+ファイルへの変更を取り消す
+git checkout -- index.html
+
+ステージした変更を取り消す
+git reset HEAD index.html
+
+直前のコミットをやり直す
+git commit --amend
