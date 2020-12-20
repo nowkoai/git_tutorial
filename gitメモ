@@ -77,3 +77,11 @@ git checkout -b feature
 
 git pull origin master
 git merge fearure
+--------------------------------
+#ブランチ名の変更
+git branch -m feature
+
+#ブランチの削除
+git branch -d feature
+#ブランチの強制削除
+git branch -D feature
