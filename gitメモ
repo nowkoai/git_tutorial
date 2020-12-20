@@ -73,3 +73,7 @@ f1763ee git statusコマンドを追記
 
 git checkout feature
 git checkout -b feature
+--------------------------------
+
+git pull origin master
+git merge fearure
