@@ -1,4 +1,4 @@
-
+--------------------------------
 ファイルへの変更を取り消す
 git checkout -- index.html
 
@@ -7,3 +7,81 @@ git reset HEAD index.html
 
 直前のコミットをやり直す
 git commit --amend
+
+--------------------------------
+# リモートリポジトリの内容を、ワークツリーにまで一度に反映
+git pull origin master
+
+# 以下と同じこと
+git fetch origin master
+git merge origin/master
+
+# Pullは楽だけど、Fetchがオススメ、、
+--------------------------------
+#リモートディククトリの確認
+git remote
+git remote show
+git remote -v
+git remote show origin
+--------------------------------
+#リモートディククトリ名の変更
+(anaconda3-2019.03) mymac15-3:~/1215/git_tutorial $ git remote rename bak bakup
+(anaconda3-2019.03) mymac15-3:~/1215/git_tutorial $ git remote show
+bakup
+origin
+
+#リモートディククトリ名の削除
+anaconda3-2019.03) mymac15-3:~/1215/git_tutorial $ git remote rm bakup
+(anaconda3-2019.03) mymac15-3:~/1215/git_tutorial $
+(anaconda3-2019.03) mymac15-3:~/1215/git_tutorial $ git remote show
+origin
+--------------------------------
+(anaconda3-2019.03) mymac15-3:~/1215/git_tutorial $ git branch
+* master
+
+# リモートのブランチも表示できるよ！
+(anaconda3-2019.03) mymac15-3:~/1215/git_tutorial $ git branch -a
+* master
+  remotes/origin/master
+
+--------------------------------
+(anaconda3-2019.03) mymac15-3:~/1215/git_tutorial $ git log --oneline
+48f35b8 (HEAD -> master, origin/master, feature) Update home.html
+b3ad835 Create home.html
+6ca127d Merge branch 'master' of https://github.com/nowkoai/git_tutorial into master
+683f296 gaaaaaait commit ammend q
+051bde5 git commit ammend
+74474a9 gitignore
+d98b3c8 git diff
+f1763ee git statusコマンドを追記
+7e47d6d Initial Commit
+(anaconda3-2019.03) mymac15-3:~/1215/git_tutorial $
+
+
+(anaconda3-2019.03) mymac15-3:~/1215/git_tutorial $ git log --oneline --decorate
+48f35b8 (HEAD -> master, origin/master, feature) Update home.html
+b3ad835 Create home.html
+6ca127d Merge branch 'master' of https://github.com/nowkoai/git_tutorial into master
+683f296 gaaaaaait commit ammend q
+051bde5 git commit ammend
+74474a9 gitignore
+d98b3c8 git diff
+f1763ee git statusコマンドを追記
+7e47d6d Initial Commit
+(anaconda3-2019.03) mymac15-3:~/1215/git_tutorial $
+--------------------------------
+
+git checkout feature
+git checkout -b feature
+--------------------------------
+
+git pull origin master
+git merge fearure
+--------------------------------
+#ブランチ名の変更
+git branch -m feature
+
+#ブランチの削除
+git branch -d feature
+#ブランチの強制削除
+git branch -D feature
